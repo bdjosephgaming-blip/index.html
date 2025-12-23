@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+    .box {
+      background: rgba(0,0,0,0.25);
+      padding: 30px 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 350px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .name {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffe6ee;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background: #fff;
+      color: #ff5f6d;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffe3ea;
+    }
+    .heart {
+      position: fixed;
+      color: rgba(255,255,255,0.7);
+      font-size: 20px;
+      animation: float 4s linear infinite;
+    }
+    @keyframes float {
+      0% {transform: translateY(0); opacity: 1;}
+      100% {transform: translateY(-100vh); opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>I’m Sorry 💔</h1>
+    <div class="name">For You</div>
+    <p>
+      I know I made a mistake.<br>
+      I never wanted to hurt you.<br><br>
+      You are important to me,<br>
+      more than words can explain ❤️
+    </p>
+    <button onclick="showLove()">Please Forgive Me</button>
+  </div>
+
+  <script>
+    function showLove() {
+      alert("I promise to do better ❤️");
+    }
+
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.bottom = "0px";
+      heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }, 300);
+  </script>
+
+</body>
+</html>
